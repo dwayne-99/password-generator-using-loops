@@ -12,28 +12,27 @@ nr_symbols = int(input(f"How many symbols would you like?\n"))
 
 nr_numbers = int(input(f"How many numbers would you like?\n"))
 
+
 password_list = []
 
-for char in range(1, nr_letters + 1):
-    password_list.append(random.choice(letters))
-
-for char in range(1, nr_symbols + 1):
-    password_list += random.choice(symbols)
-
-for char in range(1, nr_numbers + 1):
-    password_list += random.choice(numbers)
 
 # appends random characters to the password list based on the range specified by the user: (nr_letters, nr_symbols, nr_numbers)
 # this can be done using .append or +=
 # random.choice is a single function which is why loops are neccesary
+for char in range(1, nr_letters + 1):
+    password_list.append(random.choice(letters))
+for char in range(1, nr_symbols + 1):
+    password_list += random.choice(symbols)
+for char in range(1, nr_numbers + 1):
+    password_list += random.choice(numbers)
 
-random.shuffle(password_list)
 # shuffles the characters in the password list
+random.shuffle(password_list)
 
+
+# joins the characters in the password list into a string
 password = ""
 for char in password_list:
     password += char
-
-# joins the characters in the password list into a string
 
 print(f"Your password is: {password}")
